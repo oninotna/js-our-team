@@ -1,13 +1,13 @@
 // #####################################
 // FUNCTION
-function addCardMemberTeam(team, section) {
-  for (member of team) {
-    const { name, role, email, img } = member;
-    addCardMember(name, role, email, img, section);
+function addCardMemberTeam(list, section) {
+  for (member of list) {
+    addCardMember(member, section);
   }
 }
 
-function addCardMember(name, role, email, img, section) {
+function addCardMember(member, section) {
+  const { name, role, email, img } = member;
   section.innerHTML += `<div class="col-sm-12 col-md-6 col-lg-4">
       <div class="card mb-3">
         <div class="row g-0">
@@ -78,6 +78,7 @@ const inputEmail = document.getElementById("input-email");
 const inputImg = document.getElementById("input-img");
 const sendFormBtn = document.getElementById("send-info-form");
 const resetFormBtn = document.getElementById("reset-form");
+const closeForm = document.getElementById("close-form");
 
 // INVOCAZIONE FUNZIONE PER AGGIUNGERE CARD
 addCardMemberTeam(teamMembers, cardTeamSection);
@@ -103,7 +104,13 @@ sendFormBtn.addEventListener("click", (event) => {
   formSection.classList.add("d-none");
   addMemberBtn.classList.remove("d-none");
   
-  addCardMember(name, role, email, img, cardTeamSection);
+  addCardMember(memberFormInfo, cardTeamSection);
 
   addMemberForm.reset();
+});
+
+closeForm.addEventListener("click", (event) => {
+  event.preventDefault();
+  formSection.classList.add("d-none");
+  addMemberBtn.classList.remove("d-none");
 });

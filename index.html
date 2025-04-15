@@ -33,7 +33,40 @@
 
   <body>
     <header></header>
-    <main></main>
+    <main>
+      <div class="container">
+        <div class="row text-center">
+          <div class="col-12">
+            <h1 class="p-5">Meet our Team</h1>
+          </div>
+          <div class="col-12 mb-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+            Blanditiis aliquid dolor nesciunt a ut quis minus sit vero facere debitis natus 
+            fugiat voluptatibus hic nostrum, iusto dignissimos esse, atque nihil?</div>
+        </div>
+        <div class="row" id="card-team-section"></div>
+        <div class="row justify-content-center" id="form-section">
+          <div class="mt-2 text-center">
+            <button id="add-new-member" class="btn btn-secondary">Aggiungi nuovo membro</button>
+          </div>
+          <div class="col-6">
+            <form class="d-none" id="add-member-form">
+              <label for="input-name">Inserisci nome</label>
+              <input type="text" class="form-control" id="input-name">
+              <label for="input-role">Inserisci ruolo</label>
+              <input type="text" class="form-control" id="input-role">
+              <label for="input-email">Inserisci email</label>
+              <input type="email" class="form-control" id="input-email">
+              <label for="input-img">Inserisci immagine</label>
+              <input type="text" class="form-control" id="input-img">
+              <div class="mt-2 text-center">
+              <button type="submit" id="send-info-form" class="btn btn-secondary">Invia i dati</button>
+              <button type="reset" id="reset-form" class="btn btn-secondary">Cancella dati</button>
+              </div>
+            </form> 
+          </div>
+        </div>
+      </div>
+    </main>
     <footer></footer>
   </body>
 </html>
